@@ -1,0 +1,14 @@
+RewriteEngine On  
+  # If an existing asset or directory is requested go to it as it is
+  RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -f [OR]
+  RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -d
+  RewriteRule ^ - [L]
+
+  RewriteRule \.(js|css|ico|gif|jpg|jpeg|png|xml|html|woff|ttf|map|svg|woff2|eot|doc|pdf)$ - [NC,L]
+
+  # If the requested resource doesn't exist, use index.html
+  RewriteRule ^ /index.html [env=no_caching:true]
+
+  Header set Cache-Control "max-age=0, no-cache, no-store" env=REDIRECT_no_caching
+  Header set Pragma "no-cache"  env=REDIRECT_no_caching
+

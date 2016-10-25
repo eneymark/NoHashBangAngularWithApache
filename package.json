@@ -1,0 +1,16 @@
+{
+  "name": "html5Mode",
+  "description" : "support htm5 mode in angular for SEO",
+  "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "devDependencies": {
+    "grunt": "0.4.5"
+  },
+  "dependencies": {
+    "angular": "1.5.8",
+    "angular-route": "1.5.8"
+  }
+}

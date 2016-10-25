@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+    <title>My test app</title>
+    <script type="text/javascript">document.write(['<base href="', (document.location.pathname.match(/^\/myApp\/|\/somePath\//) || ['/']), '" />'].join(''));</script>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="HandheldFriendly" content="true" />
+
+</head>
+<body ng-app="myTestApp">
+
+</body>
+<a href="404.html" target="_self">404 url</a>
+<script src="node_modules/angular/angular.min.js"></script>
+<script src="node_modules/angular-route/angular-route.min.js"></script>
+<script>
+    angular.module('myTestApp', ['ngRoute'])
+            .config(['$routeProvider', function($routeProvider){
+                $routeProvider.when('/myPage1', {
+                    templateUrl: 'index.html',
+                });
+            }])
+            .config(['$locationProvider',
+                function ($locationProvider) {
+                    $locationProvider.html5Mode(true);
+             }]);
+</script>
+</html>

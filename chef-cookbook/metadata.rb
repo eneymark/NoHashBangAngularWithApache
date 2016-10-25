@@ -1,0 +1,7 @@
+name 'apache-htaccess'
+maintainer 'The Authors'
+maintainer_email 'you@example.com'
+license 'all_rights'
+description 'Installs/Configures apache-htaccess'
+long_description 'Installs/Configures apache-htaccess'
+version '0.1.0'
