@@ -4,6 +4,9 @@ RewriteEngine On
   RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -d
   RewriteRule ^ - [L]
 
+  RewriteRule generated\/dtm\/(.*) %{DOCUMENT_ROOT}/generated/dtm/$1 [L]
+  RewriteRule (__gen__|config/config\.js)(.*) %{DOCUMENT_ROOT}/$1$2 [L]
+
   RewriteRule \.(js|css|ico|gif|jpg|jpeg|png|xml|html|woff|ttf|map|svg|woff2|eot|doc|pdf)$ - [NC,L]
 
   # If the requested resource doesn't exist, use index.html
